@@ -12,7 +12,8 @@ router.post('/createuser', function (req, res, next) {
     .then((user) => {
       res.json({
         message: 'Success',
-        data: user
+        data: user,
+        user: userInfo
       });
       return;
     })
@@ -24,6 +25,24 @@ router.post('/createuser', function (req, res, next) {
       return;
     });
 });
+
+router.get('/browse', function (req, res, next) {
+  userController.fetchUsers({})
+    .then((users) => {
+      res.json({
+        message: 'Success',
+        data: users
+      });
+      return;
+    })
+    .catch((error) => {
+      res.json({
+        message: 'Failure',
+        data: error
+      });
+      return;
+    });
+})
 
 router.post('/login', function (req, res, next) {
   userController.loginUser(req.body, function (err, user) {
@@ -45,12 +64,30 @@ router.post('/login', function (req, res, next) {
 
     req.session.userID = user._id;
 
-    res.render('index', {
+    const userInfo = {
+      user: user.username,
+      email: user.email,
+      sessionID: req.session.userID
+    }
+
+    res.json({
       message: 'Hello ' + user.username + ", you've successfully logged in",
-      currentUser: user
-    });
+      user: userInfo
+    })
+    // res.render('index', {
+    //   message: 'Hello ' + user.username + ", you've successfully logged in",
+    //   currentUser: user
+    // });
     return;
   });
+});
+
+router.post('/likes', function (req, res, next) {
+
+  userController.createPost(req.body)
+    .then(user => res.json(user))
+    .catch(err => res.json(err));
+
 });
 
 module.exports = router;

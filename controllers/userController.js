@@ -1,4 +1,5 @@
 var User = require('../models/User');
+const Like = require("../models/Like");
 var bcrypt = require('bcryptjs');
 
 
@@ -48,7 +49,7 @@ module.exports = {
 
   },
   loginUser: function (params, callback) {
-    User.findOne({ email: params.email }, function (err, user) {
+    User.findOne({ username: params.username }, function (err, user) {
       if (err) {
         callback(err, null);
         return;
@@ -66,5 +67,48 @@ module.exports = {
         }
       });
     });
+  },
+
+  fetchUsers: (params) => {
+    return new Promise((resolve, reject) => {
+      User.find(params)
+        .then(users => resolve(users))
+        .catch(error => reject(error));
+    });
+  },
+
+  likeUser: (params) => {
+
+    return new Promise((resolve, reject) => {
+
+      User.findById(params._id)
+        .then(user => {
+
+          let post = new Like({
+            post: params.post,
+            user_id: params._id
+          })
+
+          post
+            .save()
+            .then(post => {
+
+              user.posts.push(post);
+              user.save()
+                .then(user => {
+                  resolve(post)
+                })
+                .catch(err => {
+                  reject(err)
+                })
+            })
+            .catch(err => {
+              reject(err);
+            })
+        })
+        .catch(err => {
+          reject(err)
+        });
+    })
   }
 };

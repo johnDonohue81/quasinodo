@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var moment = require('moment');
+const Schema = mongoose.Schema;
 
 var userSchema = new mongoose.Schema({
   email: { type: String, default: '' },
@@ -15,6 +16,9 @@ var userSchema = new mongoose.Schema({
   gender: { type: String, default: '' },
   orientation: { type: String, default: '' },
   aboutMe: { type: String, default: '' },
+  likes: [{ type: Schema.Types.ObjectId, ref: 'Like' }],
+  likedBy: [{ type: Schema.Types.ObjectId, ref: 'LikedBy' }],
+  matches: [{ type: Schema.Types.ObjectId, ref: 'Matches' }],
   createdTimeStamp: { type: String, default: () => moment().format("dddd, MMMM Do YYYY, h:mm:ss a") }
 });
 
