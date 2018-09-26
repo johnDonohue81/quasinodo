@@ -4,7 +4,7 @@ const moment = require("moment");
 const now = moment();
 
 const LikeSchema = new Schema({
-  like: { type: Boolean, default: false },
+  like: { type: Boolean, required: true },
   user_id: {
     type: Schema.Types.ObjectId, ref: 'user'
   },

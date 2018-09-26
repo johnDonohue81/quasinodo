@@ -82,6 +82,47 @@ router.post('/login', function (req, res, next) {
   });
 });
 
+router.put('/update-profile', function (req, res, next) {
+  let userID = req.session.userID
+  let newProfile = req.body;
+
+  if (req.body.password.length < 6) {
+    res.json({
+      message: 'Your password must be longer than 6 characters'
+    })
+  }
+  userController.updateUserProfile(userID, newProfile, function (err, updated) {
+    if (err) {
+      res.json({
+        message: 'fail',
+        data: err
+      })
+      return;
+    }
+    res.json({
+      message: 'updated',
+      data: updated
+    })
+    return;
+  })
+
+})
+
+router.delete('/delete-user', function (req, res) {
+  userController.deleteUser(req.session.userID, function (err) {
+    if (err) {
+      res.json({
+        message: 'Fail to delete user',
+        data: err
+      });
+    }
+    res.json({
+      message: 'user deleted',
+    })
+  })
+
+});
+
 router.post('/likes', function (req, res, next) {
 
   userController.createPost(req.body)

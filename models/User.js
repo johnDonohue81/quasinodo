@@ -18,7 +18,7 @@ var userSchema = new mongoose.Schema({
   aboutMe: { type: String, default: '' },
   likes: [{ type: Schema.Types.ObjectId, ref: 'Like' }],
   likedBy: [{ type: Schema.Types.ObjectId, ref: 'LikedBy' }],
-  matches: [{ type: Schema.Types.ObjectId, ref: 'Matches' }],
+  // matches: [{ type: Schema.Types.ObjectId, ref: 'Matches' }],
   createdTimeStamp: { type: String, default: () => moment().format("dddd, MMMM Do YYYY, h:mm:ss a") }
 });
 

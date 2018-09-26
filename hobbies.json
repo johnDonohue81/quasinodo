@@ -1,0 +1,208 @@
+{
+  "hobbies": [
+    {
+      "name": "piano",
+      "tags": [
+        "#music"
+      ]
+    },
+    {
+      "name": "kickboxing",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "conditioning/weight-training",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "blackjack group"
+    },
+    {
+      "name": "iOS Development",
+      "note_a": "need $100 apple developer investment"
+    },
+    {
+      "name": "kendo",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "ink/pencil drawing"
+    },
+    {
+      "name": "rock climbing",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "knitting"
+    },
+    {
+      "name": "geocaching",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "backpacking/camping",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "cooking",
+      "note_a": "7 dishes in 7 days",
+      "note_b": "subsets like baking or asian",
+      "note_c": "use 1 ingredient a meal you have never used before"
+    },
+    {
+      "name": "juggling"
+    },
+    {
+      "name": "unicycling",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "writing with your opposite hand"
+    },
+    {
+      "name": "learn a new language"
+    },
+    {
+      "name": "disk golf",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "poker group"
+    },
+    {
+      "name": "painting"
+    },
+    {
+      "name": "origami"
+    },
+    {
+      "name": "sky-diving",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "Go (aka Baduk)"
+    },
+    {
+      "name": "Read",
+      "note_a": "1 book a month"
+    },
+    {
+      "name": "surfing",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "improv"
+    },
+    {
+      "name": "coffee roasting"
+    },
+    {
+      "name": "Jiu-Jitsu",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "karaoke"
+    },
+    {
+      "name": "fermenting"
+    },
+    {
+      "name": "book club"
+    },
+    {
+      "name": "board game group"
+    },
+    {
+      "name": "dance",
+      "note_a": "ballroom, tango, lindy-hop, blues, swing",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "shooting",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "programming"
+    },
+    {
+      "name": "makers space (soldering, coding, general tinkering)"
+    },
+    {
+      "name": "learn to solve a rubik’s cube"
+    },
+    {
+      "name": "mountain biking",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "writing",
+      "note_a": "journal everyday",
+      "note_b": "short fiction writing"
+    },
+    {
+      "name": "roller derby",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "circus arts",
+      "note_a": "acrobatics, silks, lyra, contortion",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "fencing",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "HAM Radio"
+    },
+    {
+      "name": "wine/beer making"
+    },
+    {
+      "name": "archery",
+      "tags": [
+        "#sports"
+      ]
+    },
+    {
+      "name": "yoga",
+      "tags": [
+        "#sports"
+      ]
+    }
+  ]
+}
