@@ -94,11 +94,11 @@ router.put('/update-profile', function (req, res, next) {
   let userID = req.session.userID
   let newProfile = req.body;
 
-  if (req.body.password.length < 6) {
-    res.json({
-      message: 'Your password must be longer than 6 characters'
-    })
-  }
+  // if (req.body.password.length < 6) {
+  //   res.json({
+  //     message: 'Your password must be longer than 6 characters'
+  //   })
+  // }
   userController.updateUserProfile(userID, newProfile, function (err, updated) {
     if (err) {
       res.json({
@@ -147,6 +147,19 @@ router.get('/findUser', function (req, res, next) {
       return;
     });
 
+});
+
+router.get('/logout', function (req, res, next) {
+  if (req.session) {
+    // delete session object
+    req.session.destroy(function (err) {
+      if (err) {
+        return next(err);
+      } else {
+        return res.redirect('/');
+      }
+    });
+  }
 });
 
 router.post('/likes', function (req, res, next) {
