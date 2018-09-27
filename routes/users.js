@@ -131,6 +131,24 @@ router.delete('/delete-user', function (req, res) {
 
 });
 
+router.get('/findUser', function (req, res, next) {
+  const id = req.params.id;
+  userController.findUser(id)
+    .then(user => {
+      res.json({
+        user: user
+      })
+    })
+    .catch(error => {
+      res.json({
+        message: 'failure',
+        data: error
+      });
+      return;
+    });
+
+});
+
 router.post('/likes', function (req, res, next) {
 
   userController.createPost(req.body)
