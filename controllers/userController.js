@@ -106,38 +106,14 @@ module.exports = {
 
   },
 
-  likeUser: (params) => {
-
+  findUser: (id) => {
     return new Promise((resolve, reject) => {
+      User.findById(id)
+        .then(user => resolve(user))
+        .catch(error => reject(error));
+    });
 
-      User.findById(params._id)
-        .then(user => {
-
-          let post = new Like({
-            post: params.post,
-            user_id: params._id
-          })
-
-          post
-            .save()
-            .then(post => {
-
-              user.posts.push(post);
-              user.save()
-                .then(user => {
-                  resolve(post)
-                })
-                .catch(err => {
-                  reject(err)
-                })
-            })
-            .catch(err => {
-              reject(err);
-            })
-        })
-        .catch(err => {
-          reject(err)
-        });
-    })
   }
+
+
 };

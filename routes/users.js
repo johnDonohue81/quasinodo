@@ -10,6 +10,13 @@ router.get('/', function (req, res, next) {
 router.post('/createuser', function (req, res, next) {
   userController.createuser(req.body)
     .then((user) => {
+      req.session.userID = user._id;
+
+      const userInfo = {
+        user: user.username,
+        email: user.email,
+        sessionID: req.session.userID
+      }
       res.json({
         message: 'Success',
         data: user,
@@ -17,6 +24,7 @@ router.post('/createuser', function (req, res, next) {
       });
       return;
     })
+
     .catch((error) => {
       res.json({
         message: 'Failure',
